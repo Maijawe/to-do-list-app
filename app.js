@@ -10,8 +10,7 @@ let workItems = [];
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-mongoose.connect("mongodb+srv://thato:Blue123@cluster0.7suxvsy.mongodb.net/todoDB" , {useNewUrlParser: true});
-
+mongoose.connect('mongodb://127.0.0.1/todoDB', { useNewUrlParser: true});
 //mongoose items schema
 const Schema = mongoose.Schema;
 
@@ -158,7 +157,10 @@ else{
 
 });
 
-
+/*let port = process.env.PORT;
+if(port == null || port ==""){
+  port = 3000;
+} */
 app.listen(3000 , function(){
-  console.log("You're listening to port 3000");
+  console.log("You're suucessfully connected");
 });
